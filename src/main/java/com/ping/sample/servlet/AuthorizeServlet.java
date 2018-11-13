@@ -1,4 +1,4 @@
-package com.ping.versent.servlet;
+package com.ping.sample.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

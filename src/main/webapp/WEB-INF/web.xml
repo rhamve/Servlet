@@ -20,7 +20,7 @@
     <!-- class name -->
     <servlet-name>AuthorizeServlet</servlet-name>
     <!-- package-->
-    <servlet-class>com.ping.versent.servlet.AuthorizeServlet</servlet-class>
+    <servlet-class>com.ping.sample.servlet.AuthorizeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AuthorizeServlet</servlet-name>
@@ -32,7 +32,7 @@
     <!-- class name -->
     <servlet-name>CallServlets</servlet-name>
     <!-- package-->
-    <servlet-class>com.ping.versent.servlet.CallServlets</servlet-class>
+    <servlet-class>com.ping.sample.servlet.CallServlets</servlet-class>
 </servlet>
     <servlet-mapping>
         <servlet-name>CallServlets</servlet-name>
@@ -45,7 +45,7 @@
         <!-- class name -->
         <servlet-name>RefreshTokenServlet</servlet-name>
         <!-- package-->
-        <servlet-class>com.ping.versent.servlet.RefreshTokenServlet</servlet-class>
+        <servlet-class>com.ping.sample.servlet.RefreshTokenServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RefreshTokenServlet</servlet-name>
@@ -58,7 +58,7 @@
         <!-- class name -->
         <servlet-name>RefreshTokenServletGet</servlet-name>
         <!-- package-->
-        <servlet-class>com.ping.versent.servlet.RefreshTokenServletGet</servlet-class>
+        <servlet-class>com.ping.sample.servlet.RefreshTokenServletGet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RefreshTokenServletGet</servlet-name>
@@ -70,7 +70,7 @@
         <!-- class name -->
         <servlet-name>RefreshTokenForward</servlet-name>
         <!-- package-->
-        <servlet-class>com.ping.versent.servlet.RefreshTokenForward</servlet-class>
+        <servlet-class>com.ping.sample.servlet.RefreshTokenForward</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RefreshTokenForward</servlet-name>
@@ -82,7 +82,7 @@
         <!-- class name -->
         <servlet-name>RefreshTokenSendRedirect</servlet-name>
         <!-- package-->
-        <servlet-class>com.ping.versent.servlet.RefreshTokenSendRedirect</servlet-class>
+        <servlet-class>com.ping.sample.servlet.RefreshTokenSendRedirect</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RefreshTokenSendRedirect</servlet-name>

@@ -1,4 +1,4 @@
-package com.ping.versent.servlet;
+package com.ping.sample.servlet;
 
 //
 //  ========================================================================
@@ -23,26 +23,38 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHandler;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-public class MinimalServlets
+
+@WebServlet("/CallServlets")
+public class CallServlets extends HttpServlet
 {
-    public static void main( String[] args ) throws Exception
+    protected void doGet( HttpServletRequest request,
+                          HttpServletResponse response ) throws ServletException,
+            IOException
     {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<h3>Hello World! CallServlets Servlet </h3>");
+
         // Create a basic jetty server object that will listen on port 8080.
         // Note that if you set this to port 0 then a randomly available port
         // will be assigned that you can either look in the logs for the port,
         // or programmatically obtain it for use in test cases.
         Server server = new Server(8080);
-        System.out.println("server object: "+server);
+        System.out.println("server  object: "+server);
+
         // The ServletHandler is a dead simple way to create a context handler
         // that is backed by an instance of a Servlet.
         // This handler then needs to be registered with the Server object.
         ServletHandler handler = new ServletHandler();
         server.setHandler(handler);
+        System.out.println("handler object:"+handler);
 
         // Passing in the class for the Servlet allows jetty to instantiate an
         // instance of that Servlet and mount it on a given context path.
@@ -50,29 +62,27 @@ public class MinimalServlets
         // IMPORTANT:
         // This is a raw Servlet, not a Servlet that has been configured
         // through a web.xml @WebServlet annotation, or anything similar.
-        handler.addServletWithMapping(HelloServlet.class, "/*");
-
+        handler.addServletWithMapping(AuthorizeServlet.class, "/AuthorizeServlet");
+        System.out.println("handler path:"+handler);
         // Start things up!
-        server.start();
 
-        // The use of server.join() the will make the current thread join and
-        // wait until the server is done executing.
-        // See
-        // http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
-        server.join();
-    }
+        try {
+            //server.start();
 
-    @SuppressWarnings("serial")
-    public static class HelloServlet extends HttpServlet
-    {
-        @Override
-        protected void doGet( HttpServletRequest request,
-                              HttpServletResponse response ) throws ServletException,
-                IOException
-        {
-            response.setContentType("text/html");
-            response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().println("<h1>Hello from HelloServlet</h1>");
+            // The use of server.join() the will make the current thread join and
+            // wait until the server is done executing.
+            // See
+            // http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
+            server.join();
+
+        } catch (java.lang.InterruptedException in) {
+            in.printStackTrace();
+        } catch (Exception in) {
+            in.printStackTrace();
         }
+
+/*            response.setContentType("text/html");
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.getWriter().println("<h1>Hello from HelloServlet</h1>");*/
     }
 }

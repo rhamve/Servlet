@@ -1,4 +1,4 @@
-package com.ping.versent.servlet;
+package com.ping.sample.servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
