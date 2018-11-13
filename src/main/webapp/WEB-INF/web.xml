@@ -1,0 +1,94 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <!-- class name -->
+    <servlet-name>DemoServlet</servlet-name>
+    <!-- package-->
+    <servlet-class>com.demo.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet</servlet-name>
+    <!-- address -->
+    <url-pattern>/DemoServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <!-- class name -->
+    <servlet-name>AuthorizeServlet</servlet-name>
+    <!-- package-->
+    <servlet-class>com.ping.versent.servlet.AuthorizeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthorizeServlet</servlet-name>
+    <!-- address -->
+    <url-pattern>/AuthorizeServlet</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <!-- class name -->
+    <servlet-name>CallServlets</servlet-name>
+    <!-- package-->
+    <servlet-class>com.ping.versent.servlet.CallServlets</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>CallServlets</servlet-name>
+        <!-- address -->
+        <url-pattern>/CallServlets</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <!-- class name -->
+        <servlet-name>RefreshTokenServlet</servlet-name>
+        <!-- package-->
+        <servlet-class>com.ping.versent.servlet.RefreshTokenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshTokenServlet</servlet-name>
+        <!-- address -->
+        <url-pattern>/RefreshTokenServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <!-- class name -->
+        <servlet-name>RefreshTokenServletGet</servlet-name>
+        <!-- package-->
+        <servlet-class>com.ping.versent.servlet.RefreshTokenServletGet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshTokenServletGet</servlet-name>
+        <!-- address -->
+        <url-pattern>/RefreshTokenServletGet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!-- class name -->
+        <servlet-name>RefreshTokenForward</servlet-name>
+        <!-- package-->
+        <servlet-class>com.ping.versent.servlet.RefreshTokenForward</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshTokenForward</servlet-name>
+        <!-- address -->
+        <url-pattern>/RefreshTokenForward</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!-- class name -->
+        <servlet-name>RefreshTokenSendRedirect</servlet-name>
+        <!-- package-->
+        <servlet-class>com.ping.versent.servlet.RefreshTokenSendRedirect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshTokenSendRedirect</servlet-name>
+        <!-- address -->
+        <url-pattern>/RefreshTokenSendRedirect</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
